@@ -118,6 +118,8 @@
             animation: fadeIn 0.6s ease;
         }
 
+        /* 3D flip removed; using simple fade-in */
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -570,9 +572,9 @@
                     </p>
 
                     <div class="social-links">
-                         <a href="www.linkedin.com/in/kumara-vamsi-sirigineedi" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://facebook.com/VamsiSirigineedi" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://instagram.com/its_me_k_vamsi" title="Instagram"><i class="fab fa-instagram"></i></a>
+                         <a href="https://www.linkedin.com/in/kumara-vamsi-sirigineedi" title="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://facebook.com/VamsiSirigineedi" title="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/its_me_k_vamsi" title="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
                     </div>
 
                     <div class="cta-buttons">
@@ -1007,9 +1009,9 @@
                         </div>
 
                         <div class="social-links" style="margin-top: 30px; justify-content: flex-start;">
-                        <a href="www.linkedin.com/in/kumara-vamsi-sirigineedi" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://facebook.com/VamsiSirigineedi" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://instagram.com/its_me_k_vamsi" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/kumara-vamsi-sirigineedi" title="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://facebook.com/VamsiSirigineedi" title="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/its_me_k_vamsi" title="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
 
@@ -1138,6 +1140,8 @@
             document.querySelector('.page-nav.prev').style.opacity = currentPage === 0 ? '0.5' : '1';
             document.querySelector('.page-nav.next').style.opacity = currentPage === totalPages - 1 ? '0.5' : '1';
         }
+
+        // Removed 3D page flip logic; simple navigation only
 
         function updateURL() {
             history.pushState(null, null, `#${pages[currentPage]}`);
@@ -1450,13 +1454,7 @@
 
             // Mouse parallax disabled for notebook stability
 
-            // Social links demo handlers
-            document.querySelectorAll('.social-links a').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    alert('This is a demo social link. In a real portfolio, this would link to your ' + this.title + ' profile.');
-                });
-            });
+            // Social links: allow normal navigation (no JS blocker)
 
             // Download CV demo handler
             const cvBtn = document.querySelector('.home-content .btn-primary[href="#"]');
